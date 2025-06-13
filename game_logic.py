@@ -46,3 +46,4 @@ def play_game():
         print(f"You saved the snowman! You correctly guessed the word '{secret_word}'")
     else:
         print(f"Oh no, the snowman has melted! The secret word was '{secret_word}'")
+    print("")
