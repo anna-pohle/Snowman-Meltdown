@@ -37,7 +37,6 @@ def play_game():
                 print("Invalid Character: Please enter letters only!")
             else:
                 break
-        print("You guessed:", guess)
         if guess in secret_word:
             guessed_letters.append(guess)
         else:
