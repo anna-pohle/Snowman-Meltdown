@@ -1,5 +1,5 @@
 import random
-from ascii_art.py import STAGES
+from ascii_art import STAGES
 from words import WORDS
 
 
@@ -23,12 +23,23 @@ def play_game():
     secret_word = get_random_word()
     guessed_letters = []
     mistakes = 0
-
     print("Welcome to Snowman Meltdown!")
-    # For now, display the initial game state.
     display_game_state(mistakes, secret_word, guessed_letters)
 
-    # Prompt user for one guess (logic to be enhanced later)
-    guess = input("Guess a letter: ").lower()
-    print("You guessed:", guess)
+    while mistakes < 3 and set(guessed_letters) != set(secret_word):
+        # Prompt user for one guess (logic to be enhanced later)
+        guess = input("Guess a letter: ").lower()
+        print("You guessed:", guess)
+        if guess in secret_word:
+            guessed_letters.append(guess)
+        else:
+            mistakes += 1
+        display_game_state(mistakes, secret_word, guessed_letters)
+    if set(guessed_letters) == set(secret_word):
+        print(f"You saved the snowman! You correctly guessed {secret_word}")
+    else:
+        print(f"Oh no, the snowman has melted! The secret word was {secret_word}")
 
+"""
+len(guessed_letters) <= 3 and 
+"""
