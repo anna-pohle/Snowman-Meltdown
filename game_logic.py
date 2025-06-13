@@ -27,8 +27,16 @@ def play_game():
     display_game_state(mistakes, secret_word, guessed_letters)
 
     while mistakes < 3 and set(guessed_letters) != set(secret_word):
-        # Prompt user for one guess (logic to be enhanced later)
-        guess = input("Guess a letter: ").lower()
+        while True:
+            guess = input("Guess a letter: ").lower()
+            if len(guess) > 1:
+                print("Invalid Input: Please enter single characters only!")
+            elif guess in "0123456789":
+                print("Invalid Input (number): Please enter letters only!")
+            elif guess in "!§$%&/()=?`´+*#'-_.:,;^°<>":
+                print("Invalid Character: Please enter letters only!")
+            else:
+                break
         print("You guessed:", guess)
         if guess in secret_word:
             guessed_letters.append(guess)
@@ -36,10 +44,6 @@ def play_game():
             mistakes += 1
         display_game_state(mistakes, secret_word, guessed_letters)
     if set(guessed_letters) == set(secret_word):
-        print(f"You saved the snowman! You correctly guessed {secret_word}")
+        print(f"You saved the snowman! You correctly guessed the word'{secret_word}'")
     else:
         print(f"Oh no, the snowman has melted! The secret word was {secret_word}")
-
-"""
-len(guessed_letters) <= 3 and 
-"""
