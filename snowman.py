@@ -1,11 +1,9 @@
 import random
-
-# List of secret words
-WORDS = ["python", "git", "github", "snowman", "meltdown"]
+import ascii_art.py
 
 
 # Snowman ASCII Art stages
-STAGES = [
+ascii_art.STAGES = [
      # Stage 0: Full snowman
      """
       ___  
