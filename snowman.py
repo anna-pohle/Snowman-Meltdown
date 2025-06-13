@@ -1,8 +1,5 @@
-import random
 import game_logic
-
-# List of secret words
-WORDS = ["python", "git", "github", "snowman", "meltdown"]
+def main():
 
 
 if __name__ == "__main__":

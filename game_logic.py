@@ -1,4 +1,6 @@
+import random
 from ascii_art.py import STAGES
+from words import WORDS
 
 
 def get_random_word():
