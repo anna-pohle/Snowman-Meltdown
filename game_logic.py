@@ -43,6 +43,6 @@ def play_game():
             mistakes += 1
         display_game_state(mistakes, secret_word, guessed_letters)
     if set(guessed_letters) == set(secret_word):
-        print(f"You saved the snowman! You correctly guessed the word'{secret_word}'")
+        print(f"You saved the snowman! You correctly guessed the word '{secret_word}'")
     else:
-        print(f"Oh no, the snowman has melted! The secret word was {secret_word}")
+        print(f"Oh no, the snowman has melted! The secret word was '{secret_word}'")
